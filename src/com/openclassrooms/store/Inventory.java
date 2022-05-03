@@ -1,32 +1,34 @@
 package com.openclassrooms.store;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Inventory {
 
-    public Screen[] screens;
-    public Mouse[] mice;
+    Map<Item,Integer> items = new HashMap<Item,Integer>();
 
-    public Inventory() {
-        screens = new Screen[10];
-        mice = new Mouse[10];
+    public void addItem(Item item, int quantity) {
+        items.put(item, quantity);
     }
 
-    public void addScreen(Screen a) {
-        for(int i = 0; i< screens.length; i++) {
-            if(screens[i] == null) {
-               screens[i] = a;
-               break;
-            }
+    public void removeItem(Item item, int quantity) {
+        int value = items.get(item);
+        value = value - quantity;
+        
+        if(value < 0) value = 0;
+        items.put(item, value);
+    }
+
+    public void displayItemsOnConsole() {
+        for(Map.Entry<Item,Integer> item : items.entrySet()) {
+            System.out.println(item.getKey());
         }
     }
 
-    public void addMouse(Mouse a) {
-        for(int i = 0; i< mice.length; i++) {
-            if(mice[i] == null) {
-                mice[i] = a;
-                break;
-            }
+    public void displayInventoryOnConsole() {
+        for(Map.Entry<Item, Integer> item : items.entrySet()) {
+            System.out.println("Item: " + item.getKey() + "-> " + item.getValue());
         }
     }
-
 
 }
