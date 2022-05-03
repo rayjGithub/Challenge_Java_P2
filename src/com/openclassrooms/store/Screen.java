@@ -1,15 +1,17 @@
 package com.openclassrooms.store;
 
-public class Screen {
+public class Screen extends Item{
 
-    public String brand;
-    public double price;
     public String resolution;
 
-    public Screen(String a, double b, String c) {
-        this.brand = a;
-        this.price = b;
-        this.resolution = c;
+    public Screen(Brand brand, double price, String resolution) {
+        super(brand, price);
+        this.resolution = resolution;
+    }
+
+    // Spécialisation de la methode toString pour la classe Screen
+    public String toString() {
+        return "Screen [brand=" + brand + ", price=" + price + "]";
     }
 
 }
