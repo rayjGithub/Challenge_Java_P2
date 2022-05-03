@@ -1,6 +1,6 @@
 package com.openclassrooms.store;
 
-/** Classe mère de tous les items.
+/** Classe mère de tous les items qui doivent être gérer dans l'inventaire.
  * @author Ray
  */
 public abstract class Item {

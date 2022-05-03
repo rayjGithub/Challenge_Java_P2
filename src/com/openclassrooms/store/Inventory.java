@@ -12,7 +12,19 @@ public class Inventory {
     /** 
      * Collection sur l'iventaire des différents items et leurs quantités
      */
-    Map<Item,Integer> items = new HashMap<Item,Integer>();
+    private Map<Item,Integer> items = new HashMap<Item,Integer>();
+
+    /** 
+     * permet la création d'un nouvelle inventaire
+     */
+    public Inventory() {}
+    /** 
+     * Permet de rajouter un inventaire existant à cet inventaire
+     * @param existingItems inventaire à rajouter à celui-ci
+     */
+    public Inventory(Map<Item, Integer> existingItems) {
+        items.putAll(existingItems);// Ajoute à l'inventaire existant les nouvelles données
+    }
 
     /** 
      * permet d'ajouter un item et sa quantité dans l'inventaire

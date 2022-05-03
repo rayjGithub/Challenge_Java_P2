@@ -11,6 +11,7 @@ public class Mouse extends Item{
     }
 
     // Spécialisation de la methode toString pour la classe Mouse
+    @Override
     public String toString() {
         return "Mouse [brand=" + brand + ", price=" + price + "]";
     }
