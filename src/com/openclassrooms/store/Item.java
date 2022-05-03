@@ -1,9 +1,12 @@
 package com.openclassrooms.store;
 
-public class Item {
+/** Classe mère de tous les items.
+ * @author Ray
+ */
+public abstract class Item {
     
-    Brand brand;
-    public double price;
+    protected Brand brand;
+    protected double price;
 
     public Item(Brand brand, double price) {
         this.brand = brand;

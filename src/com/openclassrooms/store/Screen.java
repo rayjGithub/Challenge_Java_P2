@@ -1,11 +1,23 @@
 package com.openclassrooms.store;
 
+/** Classe de l'item Screen:
+ * hérite de la classe Item.
+ * @author Ray
+ */
 public class Screen extends Item{
 
     public String resolution;
 
     public Screen(Brand brand, double price, String resolution) {
         super(brand, price);
+        this.resolution = resolution;
+    }
+
+    public String getResolution() {
+        return resolution;
+    }
+
+    public void setResolution(String resolution) {
         this.resolution = resolution;
     }
 
